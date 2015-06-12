@@ -16,7 +16,7 @@ var leftScore, rightScore;
 var ballrotation=0;
 var batAcceleration = 0.1;
 var batWallCoefficient=0.03;
-var ballBounceEfficiency = 0.999, batMoveVelocity = 0.4, batBallFrictionCoeff = 0.3, batSpinFriction=0.5, ballTerminalVelocity = Math.SQRT2;
+var ballBounceEfficiency = 0.999, batMoveVelocity = 0.4, batBallFrictionCoeff = 0.45, batSpinFriction=0.5, ballTerminalVelocity = Math.SQRT2;
 var CurrentState = 0, State = {MainMenu: 1, Game: 2, Multiplayer: 3, Settings:4, Credits:5};
 var XMin = 0, XMax = WIDTH, YMin = 0.17 * HEIGHT, YMax = 0.95 * HEIGHT;
 var ballradius = WIDTH*1/100;
@@ -153,7 +153,7 @@ function ballpath(){
     else{
         var period = angle;
         var phase = Ball.y*(Ball.vy,Math.abs(Ball.vy));
-        yhit = HEIGHT*Math.sin((2*Math.PI/period)*WIDTH);
+        yhit = HEIGHT*Math.sin((2*Math.PI/period)*WIDTH)-HEIGHT*10/100;
         yhit=0
     }
     
